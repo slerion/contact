@@ -1,157 +1,45 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
+  <title>Форма</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Slerion Coder</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: url('background.jpg') no-repeat center center/cover;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-    }
-
-    .container {
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 850px;
-      width: 100%;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    h1 {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .subheading {
-      font-size: 1.2em;
-      font-weight: 500;
-      margin-bottom: 35px;
-      text-align: center;
-      color: #ccc;
-    }
-
-    .intro-text, .list {
-      text-align: left;
-      font-size: 1.05em;
-      line-height: 1.8;
-      margin-bottom: 35px;
-    }
-
-    .list ul {
-      padding-left: 20px;
-      margin: 15px 0 25px;
-    }
-
-    .list li {
-      margin-bottom: 10px;
-    }
-
-    .contact-title {
-      font-size: 1.8em;
-      font-weight: bold;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
-
-    .buttons a {
-      text-decoration: none;
-      color: white;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 12px 25px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      font-size: 1.05em;
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .buttons a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .phone {
-      font-size: 1.1em;
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .phone a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px dashed #fff;
-    }
-
-    .phone a:hover {
-      color: #ccc;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 25px 20px;
-      }
-      h1 {
-        font-size: 2em;
-      }
-      .contact-title {
-        font-size: 1.5em;
-      }
-      .intro-text, .list {
-        font-size: 1em;
-      }
-    }
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    input { display: block; margin-bottom: 15px; padding: 10px; width: 100%; }
+    button { padding: 10px 20px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Code, der funktioniert, während Sie schlafen</h1>
-    <div class="subheading">Telegram-Bots | Web-Scraper | Webseiten — entwickelt mit JavaScript</div>
+  <h2>Заполните форму</h2>
+  <input type="text" id="field1" placeholder="Поле 1" />
+  <input type="text" id="field2" placeholder="Поле 2" />
+  <button onclick="sendData()">Отправить</button>
 
-    <div class="intro-text">
-      Hallo! Ich bin ein freiberuflicher Entwickler mit über 3 Jahren Erfahrung darin, Unternehmen bei der Automatisierung von Aufgaben, der Datenerfassung und dem Aufbau einer starken Online-Präsenz zu unterstützen — mit durchdachten und skalierbaren Lösungen.<br><br>
-      Wenn Sie einen Telegram-Bot, einen Web-Scraper oder eine maßgeschneiderte Website benötigen, helfe ich Ihnen gerne dabei, diese schnell und effizient umzusetzen – mit sauberem Code und klarer Kommunikation.
-    </div>
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
 
-    <div class="list">
-      <strong>Was ich für Sie tun kann:</strong>
-      <ul>
-        <li>Telegram-Bots für Kundenservice, Automatisierung oder Marketing</li>
-        <li>Web-Scraper zur Datenerfassung von beliebigen Websites</li>
-        <li>Responsive Webseiten mit dynamischer Funktionalität</li>
-        <li>Anbindung und Verwaltung von MySQL-Datenbanken</li>
-        <li>Komplette Projektumsetzung – von der Idee bis zum fertigen Produkt</li>
-      </ul>
-      Ich lege großen Wert auf Ihre Zeit, Ihre Ziele und Ihren Erfolg. Sie erhalten regelmäßige Updates, transparente Abläufe und eine zuverlässige Lösung, die genau das tut, was sie soll – sogar während Sie schlafen.<br><br>
-      Lassen Sie uns gemeinsam Ihre Idee zum Leben erwecken! 😉🤝
-    </div>
+    function sendData() {
+      const field1 = document.getElementById('field1').value;
+      const field2 = document.getElementById('field2').value;
 
-    <h2 class="contact-title">Kontaktieren Sie mich</h2>
-    <div class="buttons">
-      <a href="https://t.me/slerionbot" target="_blank">Telegram</a>
-      <a href="https://wa.me/qr/T4YF4TNOXA2PM1" target="_blank">WhatsApp</a>
-      <a href="mailto:slerioncoder@gmail.com">Email</a>
-    </div>
-    <div class="phone">📞+49 151 67248908</div>
-  </div>
+      fetch('https://slerion.github.io/contact/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user_id: tg.initDataUnsafe.user.id,
+          field1,
+          field2
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        tg.close();
+      });
+    }
+  </script>
 </body>
 </html>
